@@ -1,0 +1,5 @@
+防火墙开放端口命令：
+iptables -A INPUT -p tcp --dport  端口号 -j ACCEPT
+
+查看端口是否开放：
+iptables -L -n
