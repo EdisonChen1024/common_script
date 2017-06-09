@@ -6,7 +6,7 @@ import threading
 
 def run(iNum = 0):
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	s.connect(("127.0.0.1", 10241))
+	s.connect(("192.168.0.158", 10241))
 	size = 1024 # 和服务端一致
 	fm = "%0" + str(size) + "s"
 	s.send(fm % iNum)
@@ -15,10 +15,10 @@ def run(iNum = 0):
 		data = s.recv(size)
 		s.send(data)
 		count += 1
-		print "==================>", count
+		# print "==================>", count
 
 
-amount = 8
+amount = 32
 lThread = []
 print("new...")
 for i in xrange(amount):
