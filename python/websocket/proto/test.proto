@@ -1,0 +1,27 @@
+syntax = "proto2";
+package proto.test;
+
+enum e_cmd_code
+{
+	cc_c2g_heartbeat = 1;
+	cc_g2c_heartbeat = 2;
+}
+
+message t_info
+{
+	optional uint32 year	= 1;
+	optional uint32 month	= 2;
+	optional uint32 day		= 3;
+	optional uint32 hour	= 4;
+	optional uint32 min		= 5;
+	optional uint32 sec		= 6;
+	optional string fmt		= 7;
+}
+
+message msg_heartbeat
+{
+	optional uint64 count	= 1;
+	optional t_info info	= 2;
+	optional string padding	= 3;
+	repeated uint64 array	= 4;
+}
